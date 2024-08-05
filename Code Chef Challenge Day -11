@@ -1,0 +1,422 @@
+01)Reach Home
+Chef is hungry and wants to reach home.
+
+Chef can travel up to 
+5
+5 kilometres on 
+1
+1 litre of fuel on his motorcycle.
+Currently, his motorcycle is filled with 
+X
+X litres of fuel and his home is 
+Y
+Y kilometres away.
+
+Determine whether Chef can reach his home on his motorcycle or not.
+
+Input Format
+The first line of input will contain a single integer 
+T
+T, denoting the number of test cases.
+The first and only line of each test case contains two space-separated integers 
+X
+X and 
+Y
+Y — the amount of fuel in Chef’s motorcycle and the distance to Chef’s home in kilometres.
+Output Format
+For each test case, output YES, if Chef can reach home on his motorcycle. Otherwise output NO.
+
+You can output each character of the answer in uppercase or lowercase. For example, the strings yEs, yes, Yes, and YES are considered the same.
+
+Constraints
+1
+≤
+T
+≤
+100
+1≤T≤100
+1
+≤
+X
+,
+Y
+≤
+1000
+1≤X,Y≤1000
+Sample 1:
+Input
+Output
+4
+2 10
+3 17
+4 2
+6 45
+YES
+NO
+YES
+NO
+Explanation:
+Test case 
+1
+1: With 
+2
+2 litres of fuel, Chef can go up to 
+10
+10 kilometres. Since his home is 
+10
+10 kilometres away, he can reach his home on his motorcycle.
+
+Test case 
+2
+2: With 
+3
+3 litres of fuel, Chef can go up to 
+15
+15 kilometres. Since his home is 
+17
+17 kilometres away, he cannot reach his home on his motorcycle.
+
+Test case 
+3
+3: With 
+4
+4 litres of fuel, Chef can go up to 
+20
+20 kilometres. Since his home is 
+2
+2 kilometres away, he can reach his home on his motorcycle.
+
+Test case 
+4
+4: With 
+6
+6 litres of fuel, Chef can go up to 
+30
+30 kilometres. Since his home is 
+45
+45 kilometres away, he cannot reach his home on his motorcycle.
+
+ANSWER:
+for i in range(int(input())):
+    x,y=map(int,input().split())
+    if x*5>=y:
+        print("yes")
+    else:
+        print("NO")
+02)Donation Rewards
+On the occasion of World Blood Donor Day, Chef has organized an event to reward regular blood donars in Chefland.
+
+If the donor has made less than or equal to 
+3
+3 donations, they receive a BRONZE donor badge.
+If the donor has made more than 
+3
+3 but less than equal to 
+6
+6 donations, they receive a SILVER donor badge.
+If the donor has made more than 
+6
+6 donations, they receive a GOLD donor badge.
+Given that a person has made 
+X
+X donations, find the badge they receive.
+
+Input Format
+The first line of input will contain a single integer 
+T
+T, denoting the number of test cases.
+Each test case contains an integer 
+X
+X, denoting the number of blood donations the person has made.
+Output Format
+For each test case, output on a new line:
+
+BRONZE, if the person has made less than or equal to 
+3
+3 donations;
+SILVER, if the person has made more than 
+3
+3 but less than equal to 
+6
+6 donations;
+GOLD, if the person has made more than 
+6
+6 donations.
+Each character can be printed in uppercase or lowercase. For example, GOLD, gold, Gold, and gOlD are considered identical.
+
+Constraints
+1
+≤
+T
+≤
+100
+1≤T≤100
+1
+≤
+X
+≤
+10
+1≤X≤10
+Sample 1:
+Input
+Output
+4
+1
+3
+5
+7
+BRONZE
+BRONZE
+SILVER
+GOLD
+Explanation:
+Test case 
+1
+1: The person has made less than equal to 
+3
+3 donations. Thus they receive bronze badge.
+
+Test case 
+2
+2: The person has made less than equal to 
+3
+3 donations. Thus they receive bronze badge.
+
+Test case 
+3
+3: The person has made more than 
+3
+3 but less than equal to 
+6
+6 donations. Thus they receive silver badge.
+
+Test case 
+4
+4: The person has made more than 
+6
+6 donations. Thus they receive gold badge.
+
+ANSWER:
+t=int(input())
+for i in range(t):
+    x=int(input())
+    if(x<=3):
+        print("BRONZE")
+    elif(x>3 and x<=6):
+        print("SILVER")
+    else:
+        print("GOLD")
+
+03)True and False Paper
+Alice wrote an exam containing 
+N
+N true or false questions (i.e. questions whose answer is either true or false). Each question is worth 
+1
+1 mark and there is no negative marking in the examination. Alice scored 
+K
+K marks out of 
+N
+N.
+
+Bob wrote the same exam but he marked each and every question as the opposite of what Alice did, i.e, for whichever questions Alice marked true, Bob marked false and for whichever questions Alice marked false, Bob marked true.
+
+Determine the score of Bob.
+
+Input Format
+The first line contains a single integer 
+T
+T — the number of test cases. Then the test cases follow.
+The first and only line of each test case contains two space-separated integers 
+N
+N and 
+K
+K — the total number of questions in the exam and the score of Alice.
+Output Format
+For each test case, output on a new line the score of Bob.
+
+Constraints
+1
+≤
+T
+≤
+2000
+1≤T≤2000
+1
+≤
+N
+≤
+100
+1≤N≤100
+0
+≤
+K
+≤
+N
+0≤K≤N
+Sample 1:
+Input
+Output
+3
+1 1
+50 0
+100 76
+0
+50
+24
+Explanation:
+Test case 
+1
+1: There was one question in the exam and Alice answered it correctly. This means that Bob will surely answer it incorrectly. Therefore Bob's score is zero.
+
+Test case 
+2
+2: Alice answered all the questions incorrectly, and so Bob will surely answer all the questions correctly. Therefore Bob's score is 
+50
+50.
+
+ANSWER:
+T=int(input())
+for i in range(T):
+    N,K=map(int,input().split())
+    print(N-K)
+
+04)The Cheaper Cab
+Chef has to travel to another place. For this, he can avail any one of two cab services.
+
+The first cab service charges 
+X
+X rupees.
+The second cab service charges 
+Y
+Y rupees.
+Chef wants to spend the minimum amount of money. Which cab service should Chef take?
+
+Input Format
+The first line will contain 
+T
+T - the number of test cases. Then the test cases follow.
+The first and only line of each test case contains two integers 
+X
+X and 
+Y
+Y - the prices of first and second cab services respectively.
+Output Format
+For each test case, output FIRST if the first cab service is cheaper, output SECOND if the second cab service is cheaper, output ANY if both cab services have the same price.
+
+You may print each character of FIRST, SECOND and ANY in uppercase or lowercase (for example, any, aNy, Any will be considered identical).
+
+Constraints
+1
+≤
+T
+≤
+100
+1≤T≤100
+1
+≤
+X
+,
+Y
+≤
+100
+1≤X,Y≤100
+Sample 1:
+Input
+Output
+3
+30 65
+42 42
+90 50
+FIRST
+ANY
+SECOND
+Explanation:
+Test case 
+1
+1: The first cab service is cheaper than the second cab service.
+
+Test case 
+2
+2: Both the cab services have the same price.
+
+Test case 
+3
+3: The second cab service is cheaper than the first cab service.
+
+ANSWER:
+t=int(input())
+for i in range(t):
+    x,y=map(int,input().split())
+    if x<y:
+        print("FIRST")
+    elif y<x:
+        print("SECOND")
+    else:
+        print("ANY")
+
+05)Discount
+Alice buys a toy with a selling price of 
+100
+100 rupees. There is a discount of 
+x
+x percent on the toy. Find the amount Alice needs to pay for it.
+
+Input Format
+The first line of input will contain a single integer 
+T
+T, denoting the number of test cases.
+The first and only line of each test case contains a single integer, 
+x
+x — the discount on the toy.
+Output Format
+For each test case, output on a new line the price that Alice needs to pay.
+
+Constraints
+1
+≤
+T
+≤
+100
+1≤T≤100
+0
+≤
+x
+<
+100
+0≤x<100
+Sample 1:
+Input
+Output
+4
+5
+9
+11
+21
+95
+91
+89
+79
+Explanation:
+Test case 
+1
+1: The discount is 
+5
+5 percent, i.e. 
+5
+5 rupees. So, Alice will have to pay 
+100
+−
+5
+=
+95
+100−5=95 rupees.
+
+ANSWER:
+T=int(input())
+for i in range(T):
+    x=int(input())
+    print(100-x)
+
+
+
+
